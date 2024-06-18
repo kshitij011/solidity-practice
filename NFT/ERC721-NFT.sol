@@ -8,7 +8,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract OpenZeppelinNFT is ERC721("MyNFT", "MNT"), Ownable(msg.sender) {
     // in ownable contract there is no immutable owner, so the owner can revoke or transfer ownership, in that case there will be no fixed owner to transfer amount to.
     // so create a variable deployer who deployes the contract and is immutable.
-    address public immutable deployer = msg.sender;
+    address public immutable deployer;
+
+    constructor() {
+        deployer = msg.sender;
+    }
 
     uint public totalSupply = 0;
     uint public constant MAX_SUPPLY = 5;
@@ -16,7 +20,7 @@ contract OpenZeppelinNFT is ERC721("MyNFT", "MNT"), Ownable(msg.sender) {
 
     function mint() external payable {
         require(totalSupply < MAX_SUPPLY, "Total supply used up");
-        require(msg.value == PRICE, "wrong price");
+        require(msg.value >= PRICE, "wrong price");
         _mint(msg.sender, totalSupply);
         totalSupply++;
     }
@@ -35,4 +39,5 @@ contract OpenZeppelinNFT is ERC721("MyNFT", "MNT"), Ownable(msg.sender) {
     }
 }
 
-// 0x7a0A64Ba75668a9452F0068C67479D1c9E4c5A0d
+// check the nft deployed on testnets.opensea.io
+// At address: 0x2f370b56a030bc316d7f84f83495e463a93b0A09
