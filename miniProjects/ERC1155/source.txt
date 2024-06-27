@@ -1,0 +1,9 @@
+Source to study ERC1155 in detail:
+
+1. https://youtu.be/ngxWWS3Qr3Q?si=N-A0wuxzp9LMyMat
+2. https://youtu.be/zCIFKXEXIRU?si=z6r9lrCJ-2epoVs9
+
+Project:
+
+1. https://youtu.be/mM77Ta-g7Hs?si=z8Ae0ubabxo38PGW
+2. https://youtu.be/sPbNvMVfvE4?si=5LDf6QhcnbNJlHAx
